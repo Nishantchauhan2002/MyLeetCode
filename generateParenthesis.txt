@@ -20,3 +20,27 @@ class Solution {
         }
     }
 }
+
+
+/*************** Without using any extra index variable for the traversal ***********************/
+
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        List<String>ans = new ArrayList<>();
+        generateParenthesis(n,"",0,0,ans);
+        return ans;
+    }
+
+    public void generateParenthesis(int n,String str,int open ,int close,List<String>ans){
+        if(open == n && close == n){
+            ans.add(str);
+            return;
+        }
+        if(open<n){
+            generateParenthesis(n,str+"(",open+1,close,ans);
+        }
+        if(close<open){
+            generateParenthesis(n,str+")",open,close+1,ans);
+        }
+    }
+}
