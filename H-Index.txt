@@ -1,3 +1,4 @@
+//H-Index
 class Solution {
     public int hIndex(int[] citations) {
         int numPapers = citations.length;
